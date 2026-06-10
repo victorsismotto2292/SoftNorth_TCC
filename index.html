@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoftNorth | Protótipo North Bag</title>
+  <meta name="description" content="Protótipo funcional da SoftNorth para automatização de demandas personalizadas da North Bag." />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="SoftNorth">
+        <img src="assets/logo-softnorth.png" alt="Logo SoftNorth" />
+      </a>
+
+      <button class="menu-button" id="menuButton" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#problema">Problema</a>
+        <a href="#solucao">Solução</a>
+        <a href="#prototipo">Protótipo</a>
+        <a href="#beneficios">Benefícios</a>
+      </nav>
+
+      <a href="#prototipo" class="nav-cta">Ver protótipo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+
+          <h1>Automação de demandas personalizadas, sem depender do papel.</h1>
+
+          <p>
+            A SoftNorth transforma pedidos personalizados em registros digitais organizados,
+            com cliente, produto, quantidade, material, personalização, prazo e status em um só lugar.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#prototipo" class="button primary">Testar cadastro</a>
+            <a href="#problema" class="button secondary">Entender a dor</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Prévia do sistema SoftNorth">
+          <div class="panel-top">
+            <div>
+              <span>Demandas de hoje</span>
+              <strong>Resumo operacional</strong>
+            </div>
+            <span class="live-badge">ativo</span>
+          </div>
+
+          <div class="mini-stats">
+            <article>
+              <span>Abertas</span>
+              <strong id="heroOpenCount">0</strong>
+            </article>
+            <article>
+              <span>Em arte</span>
+              <strong id="heroArtCount">0</strong>
+            </article>
+            <article>
+              <span>Produção</span>
+              <strong id="heroProductionCount">0</strong>
+            </article>
+          </div>
+
+          <div class="paper-to-digital">
+            <div class="paper-note">
+              <strong>Antes</strong>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="digital-card">
+              <strong>Depois</strong>
+              <p>Pedido digital com código, status e dados completos.</p>
+            </div>
+          </div>
+
+          <div class="recent-box">
+            <div class="recent-title">
+              <strong>Últimas demandas</strong>
+              <span>demo</span>
+            </div>
+            <div id="heroRecentList" class="recent-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem" id="problema">
+      <div class="container">
+        <div class="section-heading">
+          <h2>O pedido personalizado exige detalhes demais para ficar só no papel.</h2>
+          <p>
+            Na operação da North Bag, cada solicitação pode variar por produto, material, cor,
+            quantidade, arte, acabamento e prazo. Quando isso é anotado manualmente, a demanda
+            fica mais difícil de conferir, acompanhar e transformar em produção.
+          </p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card">
+            <span>01</span>
+            <h3>Dados espalhados</h3>
+            <p>Informações ficam entre papel, conversas, arquivos e memória da equipe.</p>
+          </article>
+
+          <article class="problem-card">
+            <span>02</span>
+            <h3>Conferência manual</h3>
+            <p>O vendedor precisa revisar produto, medida, quantidade, arte e prazo várias vezes.</p>
+          </article>
+
+          <article class="problem-card">
+            <span>03</span>
+            <h3>Produção sem padrão</h3>
+            <p>Se o pedido chega incompleto, a produção precisa voltar etapas e refazer alinhamentos.</p>
+          </article>
+
+          <article class="problem-card">
+            <span>04</span>
+            <h3>Gestão sem visão</h3>
+            <p>Fica difícil saber quantos pedidos estão em orçamento, arte, produção ou entrega.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section solution" id="solucao">
+      <div class="container solution-grid">
+        <div>
+          <h2>A SoftNorth padroniza a entrada da demanda.</h2>
+          <p>
+            Em vez de começar por uma anotação manual, a demanda entra por um formulário digital.
+            O sistema gera um código, registra os dados principais e acompanha o status até a entrega.
+          </p>
+
+          <div class="check-list">
+            <div>Cadastro guiado do pedido personalizado</div>
+            <div>Histórico e dados do cliente centralizados</div>
+            <div>Status de orçamento, arte, produção e entrega</div>
+            <div>Indicadores para enxergar gargalos da operação</div>
+          </div>
+        </div>
+
+        <div class="flow-card">
+          <div class="flow-item">
+            <span>1</span>
+            <div>
+              <strong>Cliente solicita</strong>
+              <p>Produto, quantidade e prazo são informados.</p>
+            </div>
+          </div>
+
+          <div class="flow-item">
+            <span>2</span>
+            <div>
+              <strong>Equipe cadastra</strong>
+              <p>A demanda entra no sistema com campos obrigatórios.</p>
+            </div>
+          </div>
+
+          <div class="flow-item">
+            <span>3</span>
+            <div>
+              <strong>Sistema organiza</strong>
+              <p>Código, status, histórico e dados ficam centralizados.</p>
+            </div>
+          </div>
+
+          <div class="flow-item">
+            <span>4</span>
+            <div>
+              <strong>Produção acompanha</strong>
+              <p>A equipe visualiza o que deve ser produzido e em qual etapa está.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prototype-section" id="prototipo">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Cadastre uma demanda e acompanhe o fluxo.</h2>
+          <p>
+            Esta área simula a parte principal da SoftNorth: substituir a anotação no papel por
+            uma demanda digital pesquisável e acompanhada por status.
+          </p>
+        </div>
+
+        <div class="app-shell">
+          <aside class="app-sidebar">
+            <div class="sidebar-logo">
+              <img src="assets/logo-softnorth.png" alt="SoftNorth" />
+            </div>
+
+            <button class="side-link active" data-screen="screen-dashboard">Painel</button>
+            <button class="side-link" data-screen="screen-form">Nova demanda</button>
+            <button class="side-link" data-screen="screen-board">Status</button>
+            <button class="side-link" data-screen="screen-list">Lista</button>
+          </aside>
+
+          <section class="app-content">
+            <div class="app-topbar">
+              <div>
+                <span>Sistema SoftNorth</span>
+                <h3 id="screenTitle">Painel de demandas</h3>
+              </div>
+
+              <button class="button primary small" id="quickNewButton">Nova demanda</button>
+            </div>
+
+            <div class="screen active" id="screen-dashboard">
+              <div class="dashboard-grid">
+                <article class="stat-card">
+                  <span>Total</span>
+                  <strong id="totalCount">0</strong>
+                  <small>demandas cadastradas</small>
+                </article>
+
+                <article class="stat-card">
+                  <span>Orçamento</span>
+                  <strong id="budgetCount">0</strong>
+                  <small>aguardando cálculo</small>
+                </article>
+
+                <article class="stat-card">
+                  <span>Arte</span>
+                  <strong id="artCount">0</strong>
+                  <small>aguardando arquivo/aprovação</small>
+                </article>
+
+                <article class="stat-card">
+                  <span>Produção</span>
+                  <strong id="productionCount">0</strong>
+                  <small>em andamento</small>
+                </article>
+              </div>
+
+              <div class="dashboard-row">
+                <div class="chart-card">
+                  <div class="card-heading">
+                    <strong>Demandas por status</strong>
+                    <span>Atualizado em tempo real</span>
+                  </div>
+                  <div id="statusBars" class="status-bars"></div>
+                </div>
+
+                <div class="chart-card">
+                  <div class="card-heading">
+                    <strong>Próximas entregas</strong>
+                    <span>Ordenado por prazo</span>
+                  </div>
+                  <div id="dueList" class="due-list"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen" id="screen-form">
+              <form class="demand-form" id="demandForm">
+                <input type="hidden" id="editingId" />
+
+                <div class="form-grid">
+                  <label>
+                    Cliente
+                    <input type="text" id="client" placeholder="Ex.: Empresa Aurora" required />
+                  </label>
+
+                  <label>
+                    Produto
+                    <select id="product" required>
+                      <option value="">Selecione</option>
+                      <option>Sacola TNT personalizada</option>
+                      <option>Ecobag de algodão</option>
+                      <option>Mochila personalizada</option>
+                      <option>Sacola retornável</option>
+                      <option>Embalagem promocional</option>
+                      <option>Kit corporativo</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Quantidade
+                    <input type="number" id="quantity" min="1" placeholder="Ex.: 500" required />
+                  </label>
+
+                  <label>
+                    Material
+                    <select id="material" required>
+                      <option value="">Selecione</option>
+                      <option>TNT</option>
+                      <option>Algodão cru</option>
+                      <option>Nylon</option>
+                      <option>Papel kraft</option>
+                      <option>Tecido ecológico</option>
+                      <option>Material a definir</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Cor base
+                    <input type="text" id="color" placeholder="Ex.: Preto" />
+                  </label>
+
+                  <label>
+                    Personalização
+                    <select id="customization" required>
+                      <option value="">Selecione</option>
+                      <option>Logo em 1 cor</option>
+                      <option>Logo em 2 cores</option>
+                      <option>Logo colorida</option>
+                      <option>Silk screen</option>
+                      <option>Bordado</option>
+                      <option>A definir</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    Prazo desejado
+                    <input type="date" id="deadline" required />
+                  </label>
+
+                  <label>
+                    Status inicial
+                    <select id="status" required>
+                      <option>Orçamento</option>
+                      <option>Arte</option>
+                      <option>Produção</option>
+                      <option>Entrega</option>
+                    </select>
+                  </label>
+
+                  <label class="full">
+                    Observações
+                    <textarea id="notes" placeholder="Ex.: cliente precisa aprovar a arte antes de iniciar produção"></textarea>
+                  </label>
+                </div>
+
+                <div class="form-actions">
+                  <button class="button primary" type="submit" id="submitButton">Salvar demanda</button>
+                  <button class="button secondary" type="button" id="clearFormButton">Limpar</button>
+                </div>
+
+                <p class="form-message" id="formMessage"></p>
+              </form>
+            </div>
+
+            <div class="screen" id="screen-board">
+              <div class="board" id="board"></div>
+            </div>
+
+            <div class="screen" id="screen-list">
+              <div class="list-tools">
+                <input type="search" id="searchInput" placeholder="Buscar por cliente, produto ou código..." />
+                <select id="filterStatus">
+                  <option value="Todos">Todos os status</option>
+                  <option>Orçamento</option>
+                  <option>Arte</option>
+                  <option>Produção</option>
+                  <option>Entrega</option>
+                </select>
+              </div>
+
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Código</th>
+                      <th>Cliente</th>
+                      <th>Produto</th>
+                      <th>Qtd.</th>
+                      <th>Status</th>
+                      <th>Prazo</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody id="demandTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section benefits" id="beneficios">
+      <div class="container">
+        <div class="section-heading">
+          <h2>O que muda para a North Bag.</h2>
+        </div>
+
+        <div class="benefit-grid">
+          <article>
+            <strong>Menos perda de informação</strong>
+            <p>Os dados deixam de ficar apenas no papel e passam a ter registro digital.</p>
+          </article>
+
+          <article>
+            <strong>Mais agilidade no orçamento</strong>
+            <p>Produto, quantidade, material e personalização já ficam separados em campos claros.</p>
+          </article>
+
+          <article>
+            <strong>Produção mais organizada</strong>
+            <p>O status mostra quais demandas estão em arte, produção ou entrega.</p>
+          </article>
+
+          <article>
+            <strong>Gestão com visão da demanda</strong>
+            <p>O painel mostra volumes, prazos e gargalos sem precisar contar papéis manualmente.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <img src="assets/logo-softnorth.png" alt="SoftNorth" />
+      <p>Protótipo funcional desenvolvido para apresentação ao cliente North Bag.</p>
+      <a href="#inicio">Voltar ao topo</a>
+    </div>
+  </footer>
+</body>
+</html>
